@@ -28,7 +28,7 @@ exports.api = async (req, res) => {
 	const utcTime = new Date(Date.now()).toISOString().slice(0, -5) + 'Z'
 
 	try {
-		res.status(201).json({
+		res.status(200).json({
 			slack_name: slack_name,
 			current_day: today,
 			utc_time: utcTime,
