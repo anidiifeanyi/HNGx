@@ -45,8 +45,8 @@ exports.HNGx = async (req, res) => {
 			current_day: today,
 			utc_time: utcTime,
 			track: myTrack,
-			github_file_url: 'https://github.com/username/repo/blob/',
-			github_repo_url: 'https://github.com/username/repo',
+			github_file_url: 'https://github.com/anidiifeanyi/HNGx.git',
+			github_repo_url: 'https://github.com/anidiifeanyi/HNGx/tree/Task1',
 			status_code: statusCode
 		})
 	} catch (error) {
