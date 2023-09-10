@@ -1,6 +1,6 @@
 const express = require('express')
 const { json } = require('express')
-const routes = require('./src/route/routes')
+const routes = require('./route/routes')
 const bodyparser = require('body-parser')
 const app = express()
 
