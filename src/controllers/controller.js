@@ -25,18 +25,7 @@ exports.api = async (req, res) => {
 	let today = weekday[d.getDay()]
 
 	// UTC TIME
-	const now = new Date()
-	const year = now.getUTCFullYear()
-	const month = now.getUTCMonth() + 1
-	const day = now.getUTCDate()
-	const hours = now.getUTCHours()
-	const minutes = now.getUTCMinutes()
-	const seconds = now.getUTCSeconds()
-
-	const utcTime = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}Z`
-
-	// Status Code
-	// const statusCode = res.statusCode
+	const utcTime = new Date(Date.now()).toISOString().slice(0, -5) + 'Z'
 
 	try {
 		res.status(201).json({
@@ -46,7 +35,7 @@ exports.api = async (req, res) => {
 			track: track,
 			github_file_url: 'https://github.com/anidiifeanyi/HNGx.git',
 			github_repo_url: 'https://github.com/anidiifeanyi/HNGx/tree/Task1',
-			status_code: 200
+			status_code: res.statusCode
 		})
 	} catch (error) {
 		res.status(500).json({ message: error.message })
