@@ -33,10 +33,10 @@ exports.api = async (req, res) => {
 	const minutes = now.getUTCMinutes()
 	const seconds = now.getUTCSeconds()
 
-	const utcTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
+	const utcTime = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}Z`
 
 	// Status Code
-	const statusCode = res.statusCode
+	// const statusCode = res.statusCode
 
 	try {
 		res.status(201).json({
@@ -46,7 +46,7 @@ exports.api = async (req, res) => {
 			track: track,
 			github_file_url: 'https://github.com/anidiifeanyi/HNGx.git',
 			github_repo_url: 'https://github.com/anidiifeanyi/HNGx/tree/Task1',
-			status_code: statusCode
+			status_code: 200
 		})
 	} catch (error) {
 		res.status(500).json({ message: error.message })
