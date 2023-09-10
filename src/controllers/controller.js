@@ -35,7 +35,7 @@ exports.api = async (req, res) => {
 			track: track,
 			github_file_url: 'https://github.com/anidiifeanyi/HNGx.git',
 			github_repo_url: 'https://github.com/anidiifeanyi/HNGx/tree/Task1',
-			status_code: res.statusCode
+			status_code: 200
 		})
 	} catch (error) {
 		res.status(500).json({ message: error.message })
