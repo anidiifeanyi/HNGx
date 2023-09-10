@@ -1,11 +1,10 @@
 // API
 exports.api = async (req, res) => {
 	// request params
-	const slackName = req.params.slackName
-	const myTrack = req.params.myTrack
+	const { slack_name, track } = req.query
 
 	// Check if both parameters are provided
-	if (!slackName || !myTrack) {
+	if (!slack_name || !track) {
 		return res
 			.status(400)
 			.json({ error: 'Both param1 and param2 are required.' })
@@ -41,10 +40,10 @@ exports.api = async (req, res) => {
 
 	try {
 		res.status(201).json({
-			slack_name: slackName,
+			slack_name: slack_name,
 			current_day: today,
 			utc_time: utcTime,
-			track: myTrack,
+			track: track,
 			github_file_url: 'https://github.com/anidiifeanyi/HNGx.git',
 			github_repo_url: 'https://github.com/anidiifeanyi/HNGx/tree/Task1',
 			status_code: statusCode
