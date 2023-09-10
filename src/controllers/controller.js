@@ -1,5 +1,5 @@
-// Endpoint
-exports.HNGx = async (req, res) => {
+// API
+exports.api = async (req, res) => {
 	// request params
 	const slackName = req.params.slackName
 	const myTrack = req.params.myTrack

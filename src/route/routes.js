@@ -6,6 +6,6 @@ const router = express.Router()
 router
 
 	// Get user info
-	.get('/HNGx/:slackName/:myTrack', controller.HNGx)
+	.get('/api/:slackName/:myTrack', controller.api)
 
 module.exports = router
